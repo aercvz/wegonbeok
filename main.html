@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solara</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #141218;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #c0a7ff;
+            margin: 10px 0 20px;
+        }
+
+        .code-box {
+            width: 60%;
+            max-width: 700px;
+            background-color: #1e1624;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            text-align: left;
+            font-family: monospace;
+            color: #a0a0a0;
+            position: relative;
+        }
+
+        .code-box::before {
+            content: 'solara';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .icon-bar {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e1624;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            color: #c0a7ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>SOLARA</h1>
+    <p class="subtitle">The first & best external script utility after <span style="color: #c0a7ff;">byfron</span></p>
+
+    <div class="code-box">
+<pre>
+if _G.IY_LOADED and not _G.IY_DEBUG == true then
+    error("Infinite Yield is already running!", 0)
+    return
+end
+
+pcall(function() getgenv().IY_LOADED = true end)
+
+local Clone = clonefunction or function(o) return o end
+COREGUI = Clone(game:GetService("CoreGui"))
+Players = Clone(game:GetService("Players"))
+
+if not game:IsLoaded() then
+    local notLoaded = Instance.new("Message")
+    notLoaded.Parent = COREGUI
+    notLoaded.Text = "Infinite Yield is waiting for the game to load"
+    game.Loaded:Wait()
+end
+</pre>
+    </div>
+
+    <div class="icon-bar">
+        <div class="icon"><img src="download-icon.png" alt="Download"></div>
+        <div class="icon"><img src="telegram-icon.png" alt="Telegram"></div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Solara by CMD Softworks | <a href="mailto:contact@example.com">Contact</a>
+    </div>
+</div>
+
+</body>
+</html>
